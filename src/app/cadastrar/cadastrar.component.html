@@ -13,7 +13,7 @@
 
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input [(ngModel)]="user.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome"z>
+                        <input [(ngModel)]="user.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
                     </div>
 
                     <div class="form-group">
@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                         <label for="senha">Senha</label>
-                        <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                        <input  class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha" (input)="confirmSenha($event)">
                     </div>
 
                     <div class="form-group">
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
-                        <button type="submit" class="btn btn-danger mr-4" >Cancelar</button>
+                        <button type="submit" class="btn btn-danger mr-4" routerLink="/entrar">Cancelar</button>
                         <button type="submit" class="btn btn-success" (click)="cadastrar()">Cadastrar</button>
 
                     </div>
