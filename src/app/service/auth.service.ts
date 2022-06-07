@@ -6,29 +6,30 @@ import { User } from '../model/User';
 import { UserLogin } from '../model/UserLogin';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor(private http: HttpClient) {}
 
-  constructor(
-    private http: HttpClient
-  ) { }
-
-  entrar(userLogin: UserLogin): Observable<UserLogin>{
-    return this.http.post<UserLogin>('https://blogpessoalmaju.herokuapp.com/usuarios/logar', userLogin)
+  entrar(userLogin: UserLogin): Observable<UserLogin> {
+    return this.http.post<UserLogin>(
+      'https://blogpessoalmaju.herokuapp.com/usuarios/logar',
+      userLogin
+    );
   }
 
-  cadastrar(user: User): Observable<User>{
-    return this.http.post<User>('https://blogpessoalmaju.herokuapp.com/usuarios/cadastrar', user)
-
+  cadastrar(user: User): Observable<User> {
+    return this.http.post<User>(
+      'https://blogpessoalmaju.herokuapp.com/usuarios/cadastrar',
+      user
+    );
   }
 
-  logado(){
-    let ok: boolean = false
-    if(environment.token != ''){
+  logado() {
+    let ok: boolean = false;
+    if (environment.token != '') {
       ok = true
     }
-    return ok 
+    return ok
   }
-
 }
