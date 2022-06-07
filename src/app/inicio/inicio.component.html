@@ -68,7 +68,7 @@
 
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered "  role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="TituloModalCentralizado">Nova postagem</h5>
@@ -86,14 +86,15 @@
 
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="titulo">Texto::</label>
+                    <label for="titulo">Texto:</label>
                     <textarea name="texto" id="texto" rows="3" class="form-control"></textarea>
                 </div>
             </div>
 
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="titulo">Escolha um tema ou <a href="">cadastre um novo</a>: </label>
+                    <label for="titulo">Escolha um tema ou <a routerLink="/tema" data-dismiss="modal">cadastre um
+                            novo</a>: </label>
                     <select name="tema" id="tema" class="form-control">
                         <option value="">Temas</option>
                     </select>
