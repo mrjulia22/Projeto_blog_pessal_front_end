@@ -1,7 +1,11 @@
 #img-bg{
-    background-image: url('https://i.imgur.com/aCOq7OB.png');
-    min-height:  600px;
+    background-image: url('https://i.imgur.com/iWcTNbf.png');
+    min-height:  695px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 600px;
+}
+
+.border-form{
+    border-radius: 40px;
 }

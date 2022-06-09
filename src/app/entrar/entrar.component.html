@@ -7,20 +7,20 @@
 
                 <div class="col-md-6">
 
-                    <h1 class="text-center">Entrar</h1>
+                    <h1 class="text-center font-weight-normal mb-4">Entrar</h1>
 
-                    <div class="form-group">
+                    <div class="form-group border-form">
                         <label for="usuario">Usuário</label>
-                        <input [(ngModel)]="userLogin.usuario" class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+                        <input [(ngModel)]="userLogin.usuario" class="form-control border-form" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group border-form">
                         <label for="senha">Senha</label>
-                        <input [(ngModel)]="userLogin.senha" class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                        <input [(ngModel)]="userLogin.senha" class="form-control border-form" type="password" name="senha" id="senha" placeholder="Sua senha">
                     </div>
 
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-sucess" (click)="entrar()">Entrar</button>
+                        <button type="submit" class="btn btn-primary mt-4 border-form" (click)="entrar()">Entrar</button>
                     </div>
 
                     <hr class="mt-5 mb-5">
