@@ -1,0 +1,30 @@
+<div class="container mb-5 mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-black">Apagar postagem</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Voce tem certeza wue deseja pagar essa postagem</h4>
+        </div>
+    </div>
+
+    <div class="card-columns d-flex">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{postagem.titulo}}</h5>
+                <small class="text-muted">Tema: {{postagem.tema.descricao}}</small>
+                <p class="card-text">{{postagem.texto}}</p>
+                <p class="card-text">
+                    <small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date:
+                        'HH:mm'}}</small>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
