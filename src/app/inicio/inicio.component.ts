@@ -88,6 +88,7 @@ export class InicioComponent implements OnInit {
       this.alerta.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostgens()
+
     })
 
 
