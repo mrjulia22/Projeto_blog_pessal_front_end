@@ -14,13 +14,22 @@ ul.social-network li{
     color: black;
     padding: 10px;
 }
-.fa-facebook-square:hover{
-    color: rgb(77, 119, 255);
+.fa-envelope:hover{
+    color: #007bff;
 }
-.fa-instagram:hover{
-    color: rgb(77, 119, 255);
+.fa-github-alt:hover{
+    color: #007bff;
 
 }
 .fa-linkedin-square:hover{
-    color: rgb(77, 119, 255);
+    color: #007bff;
+}
+
+.border-form{
+    border-radius: 40px;
+}
+
+.edit:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }

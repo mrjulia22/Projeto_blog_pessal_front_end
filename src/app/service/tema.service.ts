@@ -28,6 +28,10 @@ export class TemaService {
     );
   }
 
+  getByNomeTema(nome: string): Observable<Tema[]>{
+    return this.htpp.get<Tema[]> (`https://blogpessoalmaju.herokuapp.com/temas/nome/${nome}`, this.token)
+  }
+
   postTema(tema: Tema): Observable<Tema> {
     return this.htpp.post<Tema>(
       'https://blogpessoalmaju.herokuapp.com/temas',

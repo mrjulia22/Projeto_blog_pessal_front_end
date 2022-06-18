@@ -5,28 +5,28 @@
 
             <div class="row d-flex justify-content-center">
 
-                <div class="col-md-6">
+                <div class="col-md-6 pt-4 pb-5 border border-primary border-form shadow">
 
-                    <h1 class="text-center font-weight-normal mb-4">Entrar</h1>
+                    <h1 class="text-center font-weight-normal mt-3">Entrar</h1>
 
-                    <div class="form-group border-form">
+                    <div class="form-group border-form shadow-sm my-5">
                         <label for="usuario">Usuário</label>
-                        <input [(ngModel)]="userLogin.usuario" class="form-control border-form" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+                        <input [(ngModel)]="userLogin.usuario" class="form-control border-form " type="text" name="usuario" id="usuario" placeholder="Seu usuário">
                     </div>
 
-                    <div class="form-group border-form">
+                    <div class="form-group border-form shadow-sm">
                         <label for="senha">Senha</label>
                         <input [(ngModel)]="userLogin.senha" class="form-control border-form" type="password" name="senha" id="senha" placeholder="Sua senha">
                     </div>
 
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary mt-4 border-form" (click)="entrar()">Entrar</button>
+                        <button type="submit" class="btn btn-primary mt-4 border-form shadow" (click)="entrar()">Login</button>
                     </div>
 
                     <hr class="mt-5 mb-5">
 
-                    <p class="text-center">
-                        Não tem uma conta <a routerLink="/cadastrar">Cadastre-se</a>
+                    <p class="text-center mt-5 mb-3">
+                        Não tem uma conta?<a routerLink="/cadastrar"> <br>Cadastre-se</a>
                     </p>
 
                 </div>

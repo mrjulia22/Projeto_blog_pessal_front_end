@@ -4,12 +4,12 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <div class="collapse navbar-collapse d-flex align-items-center justify-content-center" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto d-flex align-items-center">
             <li class="nav-item active">
                 <a routerLink="/inicio">
                     <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px"
-                        class="img-fluid m-2 rounded-circle">
+                        class="img-fluid m-2 rounded-circle edit">
                 </a>
             </li>
             <li class="nav-item pl-4">
@@ -19,14 +19,17 @@
             <li class="nav-item pl-3">
                 <a [routerLink]="['/user-edit', id]">
                     <p class=" text-black fs-16 m-0">
-                        <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                        <i class="fa fa-pencil-square edit" aria-hidden="true"></i>
                     </p>
                 </a>
             </li>
         </ul>
+
         <ul class="navbar-nav ml-auto d-flex align-items-center">
-            <li class="nav-item pl-4">
-                <a class="m-0 text-black fs-16 " (click)="sair()"><i class="fa fa-times-circle text-black p-2"
+
+
+            <li class="nav-item pl-4 ">
+                <a class="m-0 text-black fs-16 " (click)="sair()"><i class="fa fa-times-circle p-2"
                         aria-hidden="true"></i></a>
             </li>
         </ul>
