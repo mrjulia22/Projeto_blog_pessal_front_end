@@ -18,6 +18,7 @@ export class PostagemDeleteComponent implements OnInit {
   idPost: number
 
   constructor(
+    
     private router: Router,
     private route: ActivatedRoute,
     private postagemService: PostagemService,

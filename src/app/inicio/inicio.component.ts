@@ -12,27 +12,24 @@ import { TemaService } from '../service/tema.service';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
+  postagem: Postagem = new Postagem();
+  listaPostagens: Postagem[];
+  tituloPost: string;
+  nomeTema: string;
+  token = environment.token;
 
-  postagem: Postagem = new Postagem()
-  listaPostagens: Postagem[]
-  tituloPost: string
-  nomeTema: string
-  token = environment.token
+  tema: Tema = new Tema();
+  listaTemas: Tema[];
+  idTema: number;
 
+  user: User = new User();
+  idUser = environment.id;
 
-  
-  tema: Tema = new Tema()
-  listaTemas: Tema[]
-  idTema: number
-
-  user: User = new User()
-  idUser = environment.id
-
-  key  ='data'
-  reverse = true
+  key = 'data';
+  reverse = true;
 
   constructor(
     private router: Router,
@@ -40,86 +37,81 @@ export class InicioComponent implements OnInit {
     private temaService: TemaService,
     private authService: AuthService,
     private alerta: AlertasService
+  ) {}
 
-  ) { }
+  ngOnInit() {
+    window.scroll(0, 0);
 
-  ngOnInit(){
-
-    window.scroll(0,0)
-
-    if(environment.token == ''){
-      this.router.navigate(["/entrar"])
+    if (environment.token == '') {
+      this.router.navigate(['/entrar']);
     }
 
     this.authService.refreshToken();
-    this.getAllTemas()
-    this.getAllPostgens()
-
-
+    this.getAllTemas();
+    this.getAllPostgens();
   }
 
-  getAllTemas(){
-    this.temaService.gatAllTema().subscribe((resp: Tema[]) =>{
-      this.listaTemas = resp
-    })
+  getAllTemas() {
+    this.temaService.gatAllTema().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp;
+    });
   }
 
-  findByIdTema(){
+  findByIdTema() {
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-      this.tema = resp
-    })
+      this.tema = resp;
+    });
   }
 
-  getAllPostgens(){
+  getAllPostgens() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
-      this.listaPostagens = resp
-    })
+      this.listaPostagens = resp;
+    });
   }
 
-  findByIdUser(){
+  findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
-      this.user = resp
-    })
+      this.user = resp;
+    });
   }
-  publicar(){
-    this.tema.id = this.idTema
-    this.postagem.tema = this.tema
+  publicar() {
+    this.tema.id = this.idTema;
+    this.postagem.tema = this.tema;
 
-    this.user.id = this.idUser
-    this.postagem.usuario = this.user
+    this.user.id = this.idUser;
+    this.postagem.usuario = this.user;
 
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
-      this.postagem = resp
-      this.alerta.showAlertSuccess('Postagem realizada com sucesso!')
-      this.postagem = new Postagem()
-      this.getAllPostgens()
-
-    })
-
-
+    this.postagemService
+      .postPostagem(this.postagem)
+      .subscribe((resp: Postagem) => {
+        this.postagem = resp;
+        this.alerta.showAlertSuccess('Postagem realizada com sucesso!');
+        this.postagem = new Postagem();
+        this.getAllPostgens();
+      });
   }
 
-  findByTituloPostagem(){
-
-    if(this.tituloPost == ''){
-      this.getAllPostgens()
+  findByTituloPostagem() {
+    if (this.tituloPost == '') {
+      this.getAllPostgens();
     } else {
-    this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
-      this.listaPostagens = resp
-    })
-  }
-  }
-
-  findByNomeTema(){
-
-    if(this.nomeTema == ''){
-      this.getAllTemas()
-      
-    } else {
-      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => {
-        this.listaTemas = resp
-      })
+      this.postagemService
+        .getByTituloPostagem(this.tituloPost)
+        .subscribe((resp: Postagem[]) => {
+          this.listaPostagens = resp;
+        });
     }
+  }
 
+  findByNomeTema() {
+    if (this.nomeTema == '') {
+      this.getAllTemas();
+    } else {
+      this.temaService
+        .getByNomeTema(this.nomeTema)
+        .subscribe((resp: Tema[]) => {
+          this.listaTemas = resp;
+        });
+    }
   }
 }

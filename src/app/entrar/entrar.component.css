@@ -1,7 +1,8 @@
 #img-bg {
     background-image: url('https://i.imgur.com/iWcTNbf.png');
-    min-height: 695px;
-    background-position: center;
+    min-height: 556px;
+    max-height: 592px;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: 600px;
 }
@@ -14,7 +15,7 @@
     position: relative;
     font-size: 17px;
     text-decoration: none;
-    padding: 1em 2.5em;
+    padding: 0.4em 6.2em;
     display: inline-block;
     border-radius: 6em;
     transition: all .2s;
@@ -57,4 +58,20 @@
 .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 87.5%;
+    }
 }

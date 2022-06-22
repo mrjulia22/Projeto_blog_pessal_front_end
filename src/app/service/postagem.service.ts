@@ -9,7 +9,6 @@ import { Postagem } from "../model/Postagem";
   providedIn: 'root'
 })
 export class PostagemService {
-
   constructor( private http: HttpClient) { }
 
   token = {

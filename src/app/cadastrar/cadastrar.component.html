@@ -1,59 +1,68 @@
 <div class="container-fluid">
 
-    <div class="row">
+    <div class="row d-flex align-items-center justify-content-center">
 
-        <div class="col-md-6" id="img-bg"></div>
+        <div class="col-4 border-white border-form shadow m-5 py-5 px-4">
 
-        <div class="col-md-6 mt-3 mb-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-10">
-                    <h1 class="text-center">
-                        Cadastro
-                    </h1>
+            <h1 class="text-center mb-3">
+                Cadastro
+            </h1>
 
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input [(ngModel)]="user.nome" class="form-control border-form" type="text" name="nome" id="nome" placeholder="Seu nome">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="usuario">Usuário</label>
-                        <input [(ngModel)]="user.usuario" class="form-control border-form" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="foto">Link da foto</label>
-                        <input [(ngModel)]="user.foto" class="form-control border-form" type="text" name="foto" id="foto" placeholder="Link da sua foto">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input  class="form-control border-form" type="password" name="senha" id="senha" placeholder="Sua senha" (input)="confirmSenha($event)">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="confirmSenha">Confirmar Senha</label>
-                        <input [(ngModel)]="user.senha" class="form-control border-form" type="password" name="confirmSenha" id="confirmSenha"
-                            placeholder="Confirme sua senha">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="tipo">Tipo de usuário</label>
-                        <select class="form-control border-form" name="tipo" id="tipo" (change)="tipoUser($event)">
-                            <option>Selecione um tipo de usuário</option>
-                            <option value="Normal">Normal</option>
-                            <option value="ADM">Administrador</option>
-
-                        </select>
-                    </div>
-
-                    <div class="d-flex justify-content-center mt-4 border-form">
-                        <button type="submit" class="btn btn-danger mr-4 border-form" routerLink="/entrar">Cancelar</button>
-                        <button type="submit" class="btn btn-primary border-form" (click)="cadastrar()">Cadastrar</button>
-
-                    </div>
-                </div>
+            <div class="form-group px-4">
+                <label for="nome">Nome</label>
+                <input [(ngModel)]="user.nome" class="form-control border-form mb-5" type="text" name="nome" id="nome"
+                    placeholder="Seu nome">
             </div>
+
+            <div class="form-group px-4">
+                <label for="usuario">Usuário</label>
+                <input [(ngModel)]="user.usuario" class="form-control border-form mb-5" type="text" name="usuario"
+                    id="usuario" placeholder="Seu usuário">
+            </div>
+
+            <div class="form-group px-4">
+                <label for="foto">Link da foto</label>
+                <input [(ngModel)]="user.foto" class="form-control border-form mb-5" type="text" name="foto" id="foto"
+                    placeholder="Link da sua foto">
+            </div>
+
+
         </div>
+
+        <div class="col-4 border-white border-form shadow m-5 py-5 px-4">
+
+            <div class="form-group mt-3 px-4">
+                <label for="senha">Senha</label>
+                <input class="form-control border-form mb-5" type="password" name="senha" id="senha" placeholder="Sua senha"
+                    (input)="confirmSenha($event)">
+            </div>
+
+            <div class="form-group px-4">
+                <label for="confirmSenha">Confirmar Senha</label>
+                <input [(ngModel)]="user.senha" class="form-control border-form mb-5" type="password" name="confirmSenha"
+                    id="confirmSenha" placeholder="Confirme sua senha">
+            </div>
+
+            <div class="form-group px-4">
+                <label for="tipo">Tipo de usuário</label>
+                <select class="form-control border-form mb-5" name="tipo" id="tipo" (change)="tipoUser($event)">
+                    <option>Selecione um tipo de usuário</option>
+                    <option value="Normal">Normal</option>
+                    <option value="ADM">Administrador</option>
+
+                </select>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center mt-4 border-form mx-5">
+                <button type="submit" class="btncancel btn-danger mr-4 px-5 border-form" routerLink="/entrar">Cancelar</button>
+                <br>
+                <button type="submit" class="btn btn-primary px-5 border-form" (click)="cadastrar()">Cadastrar</button>
+
+            </div>
+
+
+        </div>
+
+
     </div>
 </div>

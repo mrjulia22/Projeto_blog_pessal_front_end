@@ -25,6 +25,10 @@ ul.social-network li{
     color: #007bff;
 }
 
+.fa-code:hover{
+    color: #007bff;
+}
+
 .border-form{
     border-radius: 40px;
 }

@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
-    <div class="row bg-white d-flex align-items-center py-5">
-        <div class="col-md-6 my-5 py-4">
+    <div class="row bg-white d-flex align-items-center pb-5 pt-3">
+        <div class="col-md-6 my-4 py-3">
 
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 text-black">
@@ -10,9 +10,9 @@
                 </div>
             </div>
 
-            <div class="row d-flex justify-content-center mt-5 mb-xl-5">
-                <div class="col-md-6">
-                    <button class="btn btn-primary mr-2 border-form shadow-sm" data-toggle="modal"
+            <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-7">
+                    <button class="btn btn-primary border-form shadow-sm mr-2" data-toggle="modal"
                         data-target="#novaPostagem">Nova
                         postagem</button>
                     <a class="btn btn-outline-primary border-form shadow-sm" href="#postagens">Ver postagens</a>
@@ -58,7 +58,7 @@
             <div class="row d-flex justify-content-center mt-5 mb-5">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="text" class="form-control border-form shadow-sm" id="titulo" placeholder="Informe um caractere que deseja buscar" [(ngModel)]="tituloPost" (keyup)="findByTituloPostagem">
+                        <input type="text" class="form-control border-form shadow-sm" id="titulo" placeholder="Informe um caractere que deseja varrer" [(ngModel)]="tituloPost" (keyup)="findByTituloPostagem()">
 
                     </div>
                 </div>
@@ -88,8 +88,7 @@
             <div class="row d-flex justify-content-center mt-5 mb-5">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="text" class="form-control border-form shadow-sm" id="titulo" placeholder="Informe um caractere que deseja buscar" [(ngModel)]="tituloPost" (keyup)="findByTituloPostagem">
-
+                        <input type="text" class="form-control border-form shadow-sm" id="titulo" placeholder="Informe um caractere que deseja buscar" [(ngModel)]="tituloPost" (onkeyup)="findByTituloPostagem()">
                     </div>
                 </div>
             </div>
@@ -115,18 +114,19 @@
 
         
 
-        <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagensPorTema-tab">
+        <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
 
             <div class="row d-flex justify-content-center mt-5 mb-5">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="text" class="form-control border-form shadow-sm" id="titulo" placeholder="Informe o tema que deseja buscar" [(ngModel)]="nomeTema" (keyup)="findByNomeTema()">
+                        <input type="text" class="form-control border-form shadow-sm" id="titulo" placeholder="Informe o tema que deseja buscar"
+                        [(ngModel)]="nomeTema" (keyup)="findByNomeTema()">
     
                     </div>
                 </div>
             </div>
 
-            <div class="card-columns"*ngFor="let tema of listaTemas">
+            <div class="card-columns" *ngFor="let tema of listaTemas">
                 <div class="card border-form shadow-sm p-2 mb-4" *ngFor="let item of tema.postagem | orderBy : key : reverse">
                     <div class="card-body text-center">
                         <h5 class="card-title font-weight-bold">{{item.titulo}}</h5>
@@ -150,7 +150,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content border-form">
             <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Nova postagem</h5>
+                <h5 class="modal-title" id="TituloModalCentralizado">   Nova postagem</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -184,8 +184,8 @@
             </div>
 
             <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-danger border-form" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary border-form" (click)="publicar()">Publicar</button>
+                <button type="button" class="btncancel btn-danger border-form" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary border-form" (click)="publicar()" data-dismiss="modal">Publicar</button>
             </div>
         </div>
     </div>

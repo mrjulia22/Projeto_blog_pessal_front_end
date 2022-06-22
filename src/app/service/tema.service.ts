@@ -8,32 +8,35 @@ import { Tema } from '../model/Tema';
   providedIn: 'root',
 })
 export class TemaService {
-  constructor(private htpp: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
   };
 
   gatAllTema(): Observable<Tema[]> {
-    return this.htpp.get<Tema[]>(
+    return this.http.get<Tema[]>(
       'https://blogpessoalmaju.herokuapp.com/temas',
       this.token
     );
   }
 
   getByIdTema(id: number): Observable<Tema> {
-    return this.htpp.get<Tema>(
+    return this.http.get<Tema>(
       `https://blogpessoalmaju.herokuapp.com/temas/${id}`,
       this.token
     );
   }
 
-  getByNomeTema(nome: string): Observable<Tema[]>{
-    return this.htpp.get<Tema[]> (`https://blogpessoalmaju.herokuapp.com/temas/nome/${nome}`, this.token)
+  getByNomeTema(nome: string): Observable<Tema[]> {
+    return this.http.get<Tema[]>(
+      `https://blogpessoalmaju.herokuapp.com/temas/nome/${nome}`,
+      this.token
+    );
   }
 
   postTema(tema: Tema): Observable<Tema> {
-    return this.htpp.post<Tema>(
+    return this.http.post<Tema>(
       'https://blogpessoalmaju.herokuapp.com/temas',
       tema,
       this.token
@@ -41,7 +44,7 @@ export class TemaService {
   }
 
   putTema(tema: Tema): Observable<Tema> {
-    return this.htpp.put<Tema>(
+    return this.http.put<Tema>(
       'https://blogpessoalmaju.herokuapp.com/temas',
       tema,
       this.token
@@ -49,7 +52,7 @@ export class TemaService {
   }
 
   deleteTema(id: number) {
-    return this.htpp.delete(
+    return this.http.delete(
       `https://blogpessoalmaju.herokuapp.com/temas/${id}`,
       this.token
     );

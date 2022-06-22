@@ -2,15 +2,20 @@
 
     <div class="row mb-5">
         <div class="col-md-12">
-
             <h1 class="text-center text-black">Apagar tema</h1>
         </div>
     </div>
 
-    <div class="row-mb-3">
+    <div class="row">
         <div class="col-md-12">
-            <h4 class="text-center text-black font-weight-light">Voce tem certeza que deseja apagar o tema {{tema.descricao}}? Todas as postagens
+            <h4 class="text-center text-black font-weight-light">Você tem certeza que deseja apagar o tema {{tema.descricao}}? Todas as postagens
                 relacionadas ao tema deletado também serão apagadas.</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="text-center text-indo">Tema: {{tema.descricao}}</h5>
         </div>
     </div>
 
@@ -20,4 +25,5 @@
             <button class="btn btn-primary border-form" (click)="apagar()">Sim</button>
         </div>
     </div>
+
 </div>

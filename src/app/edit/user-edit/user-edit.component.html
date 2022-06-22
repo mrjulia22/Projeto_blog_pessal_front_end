@@ -6,37 +6,37 @@
     </div>
     <div class="row d-flex px-5 border-form">
         <div class="col align-self-center px-5 border-form">
-            <div class="form-group border-form">
+            <div class="form-group border-form shadow-sm">
                 <label for="nome">Nome</label>
                 <input [(ngModel)]="user.nome" class="form-control border-form" type="text" name="nome" id="nome"
                     placeholder="Seu nome">
             </div>
 
-            <div class="form-group border-form">
+            <div class="form-group border-form shadow-sm">
                 <label for="usuario">Usuário</label>
                 <input [(ngModel)]="user.usuario" class="form-control border-form" type="text" name="usuario"
                     id="usuario" placeholder="Seu usuário">
             </div>
 
-            <div class="form-group border-form">
+            <div class="form-group border-form shadow-sm">
                 <label for="foto">Link da foto</label>
                 <input [(ngModel)]="user.foto" class="form-control border-form" type="text" name="foto" id="foto"
                     placeholder="Link da sua foto">
             </div>
 
-            <div class="form-group border-form">
+            <div class="form-group border-form shadow-sm">
                 <label for="senha">Senha</label>
                 <input class="form-control border-form" type="password" name="senha" id="senha" placeholder="Sua senha"
                     (input)="confirmSenha($event)">
             </div>
 
-            <div class="form-group border-form">
+            <div class="form-group border-form shadow-sm">
                 <label for="confirmSenha">Confirmar Senha</label>
                 <input [(ngModel)]="user.senha" class="form-control border-form" type="password" name="confirmSenha"
                     id="confirmSenha" placeholder="Confirme sua senha">
             </div>
 
-            <div class="form-group border-form">
+            <div class="form-group border-form shadow-sm">
                 <label for="tipo">Tipo de usuário</label>
                 <select class="form-control border-form" name="tipo" id="tipo" (change)="tipoUser($event)">
                     <option>Selecione um tipo de usuário</option>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="d-flex justify-content-center mt-4 border-form">
-                <button type="submit" class="btn btn-danger mr-4 border-form" routerLink="/inicio">Cancelar</button>
+                <button type="submit" class="btncancel btn-danger mr-4 border-form" routerLink="/inicio">Cancelar</button>
                 <button type="submit" class="btn btn-primary border-form" (click)="atualizar()">Atualizar</button>
 
             </div>

@@ -1,3 +1,93 @@
 .border-form{
     border-radius: 40px;
 }
+
+.btn {
+    position: relative;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 0.4em 3em;
+    display: inline-block;
+    border-radius: 6em;
+    transition: all .2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: white;
+    background-color:  #007bff!important;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px white;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn::after {
+    background-color: #007bff!important;
+}
+
+;
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btncancel{
+    position: relative;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 0.4em 3em;
+    display: inline-block;
+    border-radius: 6em;
+    transition: all .2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: white;
+}
+
+.btncancel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btncancel:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px white;
+}
+
+.btncancel::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btncancel::after {
+    background-color: #dc3545!important;
+}

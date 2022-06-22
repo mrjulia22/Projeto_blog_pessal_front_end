@@ -31,8 +31,8 @@ export class TemaComponent implements OnInit {
       this.router.navigate(["/entrar"])
     }
 
-    if(environment.tipo != 'adm'){
-      this.alerta.showAlertDanger('Você precisar de ADM para acessar essa rota')
+    if(environment.tipo != 'ADM'){
+      this.alerta.showAlertDanger('Você precisa ser ADM para acessar essa rota')
       this.router.navigate(["/entrar"])
     }
 
@@ -48,7 +48,7 @@ export class TemaComponent implements OnInit {
   cadastrar(){
     this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
       this.tema = resp
-      alert('Tema cadastrado com sucesso')
+      this.alerta.showAlertSuccess('Tema cadastrado com sucesso!')
       this.findAllTemas()
       this.tema = new Tema()
     })

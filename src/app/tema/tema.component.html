@@ -10,7 +10,7 @@
             <div class="row d-flex justify-content-center mt-4 mb-5">
                 <div class="col-md-4">
 
-                    <div class="form-group">
+                    <div class="form-group shadow-sm">
                         <input [(ngModel)]="tema.descricao" type="text" class="form-control border-form" id="descricao" placeholder="Digite a descrição do tema">
                     </div>
 
@@ -55,7 +55,7 @@
                     <td>{{item.descricao}}</td>
                     <td class="d-flex justify-content-end">
                         <button class="btn btn-primary mr-3 border-form" [routerLink]="['/tema-edit', item.id]" >Editar</button>
-                        <button class="btn btn-danger border-form" [routerLink]="['/tema-delete', item.id]" >Apagar</button>
+                        <button class="btncancel btn-danger border-form" [routerLink]="['/tema-delete', item.id]" >Apagar</button>
                     </td>
                   </tr>
 
